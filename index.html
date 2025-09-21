@@ -21,6 +21,7 @@
       padding: 40px 20px;
       border-bottom: 4px solid #d63384;
       position: relative;
+      z-index: 10; /* keep header above stickers */
     }
 
     header h1 {
@@ -56,6 +57,8 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin: 40px auto;
       max-width: 800px;
+      position: relative;
+      z-index: 5;
     }
 
     section h2 {
@@ -71,20 +74,21 @@
       color: #fff;
       border-top: 4px solid #d63384;
       position: relative;
+      z-index: 10;
     }
 
-    /* stickers */
+    /* stickers (floating flowers) */
     .sticker {
       position: absolute;
       width: 80px;
       opacity: 0.9;
-      z-index: 0;
+      z-index: 1;
       animation: float 5s ease-in-out infinite;
     }
 
-    .sticker.heart { top: 20px; left: 20px; animation-duration: 5s; animation-delay: 0s; }
-    .sticker.star { top: 100px; right: 50px; animation-duration: 4s; animation-delay: 1s; }
-    .sticker.bow { bottom: 40px; right: 20px; animation-duration: 6s; animation-delay: 0.5s; }
+    .sticker.one { top: 20px; left: 20px; animation-duration: 5s; }
+    .sticker.two { top: 100px; right: 50px; animation-duration: 4s; }
+    .sticker.three { bottom: 40px; right: 20px; animation-duration: 6s; }
 
     /* floating animation */
     @keyframes float {
@@ -119,8 +123,9 @@
     made with 💖 and curiosity ✨
   </footer>
 
-  <!-- stickers -->
-  <img src="flower1.png" ...>
-<img src="flower2.png" ...>
+  <!-- stickers (make sure flower1.png and flower2.png exist in the SAME folder as index.html) -->
+  <img src="flower1.png" class="sticker one" alt="flower sticker 1">
+  <img src="flower2.png" class="sticker two" alt="flower sticker 2">
+  <img src="flower1.png" class="sticker three" alt="flower sticker 3">
 </body>
 </html>
