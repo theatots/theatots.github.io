@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,7 +21,7 @@
       padding: 40px 20px;
       border-bottom: 4px solid #d63384;
       position: relative;
-      z-index: 10; /* keep header above stickers */
+      z-index: 100;
     }
 
     header h1 {
@@ -58,7 +58,7 @@
       margin: 40px auto;
       max-width: 800px;
       position: relative;
-      z-index: 5;
+      z-index: 10;
     }
 
     section h2 {
@@ -74,20 +74,21 @@
       color: #fff;
       border-top: 4px solid #d63384;
       position: relative;
-      z-index: 10;
+      z-index: 100;
     }
 
     /* stickers (floating flowers) */
     .sticker {
       position: absolute;
-      width: 80px;
-      opacity: 0.9;
-      z-index: 1;
+      opacity: 0.95;
+      z-index: 50; /* above content */
       animation: float 5s ease-in-out infinite;
     }
 
-    .sticker.one { top: 20px; left: 20px; animation-duration: 5s; }
-    .sticker.two { top: 100px; right: 50px; animation-duration: 4s; }
+    /* each one has unique position + size + animation speed */
+    .sticker.one { top: 30px; left: 30px; width: 70px; animation-duration: 5s; }
+    .sticker.two { top: 150px; right: 50px; width: 90px; animation-duration: 6s; }
+    .sticker.three { bottom: 60px; left: 80px; width: 80px; animation-duration: 7s; }
 
     /* floating animation */
     @keyframes float {
