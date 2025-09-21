@@ -15,21 +15,25 @@
       position: relative;
       overflow-x: hidden;
     }
+
     header {
       background-color: #ffb6d9;
       padding: 40px 20px;
       border-bottom: 4px solid #d63384;
       position: relative;
     }
+
     header h1 {
       font-family: 'Sacramento', cursive;
-      font-size: 60px;
+      font-size: clamp(36px, 8vw, 60px);
       margin: 0;
       color: #d63384;
     }
+
     nav {
       margin-top: 15px;
     }
+
     nav a {
       text-decoration: none;
       color: #fff;
@@ -40,17 +44,26 @@
       font-size: 14px;
       transition: 0.3s;
     }
+
     nav a:hover {
       background: #a61e68;
     }
+
     section {
       padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 40px auto;
+      max-width: 800px;
     }
+
     section h2 {
       font-size: 28px;
       color: #d63384;
       margin-bottom: 15px;
     }
+
     footer {
       background: #ffb6d9;
       padding: 15px;
@@ -59,24 +72,27 @@
       border-top: 4px solid #d63384;
       position: relative;
     }
+
     /* stickers */
     .sticker {
       position: absolute;
       width: 80px;
       opacity: 0.9;
       z-index: 0;
+      animation: float 5s ease-in-out infinite;
     }
-    .sticker.heart {
-      top: 20px;
-      left: 20px;
-    }
-    .sticker.bow {
-      bottom: 40px;
-      right: 20px;
-    }
-    .sticker.star {
-      top: 100px;
-      right: 50px;
+
+    .sticker.heart { top: 20px; left: 20px; animation-duration: 5s; animation-delay: 0s; }
+    .sticker.star { top: 100px; right: 50px; animation-duration: 4s; animation-delay: 1s; }
+    .sticker.bow { bottom: 40px; right: 20px; animation-duration: 6s; animation-delay: 0.5s; }
+
+    /* floating animation */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-15px) rotate(5deg); }
+      50% { transform: translateY(0px) rotate(0deg); }
+      75% { transform: translateY(15px) rotate(-5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
     }
   </style>
 </head>
@@ -103,6 +119,8 @@
     made with 💖 and curiosity ✨
   </footer>
 
-<!-- stickers -->
-<img src="flower1.png" class="sticker heart" alt="flower sticker 1">
-<img src="flower2.png" class="sticker star" alt="flower sticker 2">
+  <!-- stickers -->
+  <img src="flower1.png" class="sticker heart" alt="flower sticker 1">
+  <img src="flower2.png" class="sticker star" alt="flower sticker 2">
+</body>
+</html>
